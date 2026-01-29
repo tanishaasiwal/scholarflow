@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login — ScholarFlow</title>
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="form-page">
+    <!-- HEADER -->
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <a href="index.html" class="logo">
+            <i class="fas fa-graduation-cap"></i> ScholarFlow
+          </a>
+
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li>
+              <a href="index.html#scholarships">Scholarships</a>
+            </li>
+            <li><a href="index.html#upcoming">Upcoming</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+
+          <div class="nav-actions">
+            <button
+              class="btn btn-outline"
+              onclick="location.href = 'login.html'"
+            >
+              Login
+            </button>
+            <button
+              class="btn btn-primary"
+              onclick="location.href = 'signup.html'"
+            >
+              Sign Up
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- LOGIN FORM -->
+    <main class="container main-content form-page">
+      <div class="form-container">
+        <div class="form-header">
+          <h2>Sign In</h2>
+          <p style="opacity: 0.85">Welcome back! Please login</p>
+        </div>
+
+        <div class="form-body">
+          <form id="loginPageForm">
+            <!-- Email -->
+            <div class="form-group">
+              <input
+                type="email"
+                name="email"
+                class="form-input"
+                placeholder="Email address"
+                required
+              />
+            </div>
+
+            <!-- Password -->
+            <div class="form-group" style="position: relative">
+              <input
+                type="password"
+                name="password"
+                id="loginPassword"
+                class="form-input"
+                placeholder="Password"
+                required
+                minlength="6"
+              />
+              <i
+                class="fas fa-eye"
+                style="
+                  position: absolute;
+                  right: 14px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  cursor: pointer;
+                  opacity: 0.6;
+                "
+                onclick="togglePassword()"
+              ></i>
+            </div>
+
+            <!-- Remember + Forgot -->
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+                font-size: 0.9rem;
+              "
+            >
+              <label> <input type="checkbox" /> Remember me </label>
+              <a href="#" style="color: var(--primary)">Forgot password?</a>
+            </div>
+
+            <!-- Submit -->
+            <div class="form-group">
+              <button class="btn btn-primary" type="submit">Sign In</button>
+            </div>
+
+            <!-- Divider -->
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin: 1rem 0;
+                opacity: 0.6;
+              "
+            >
+              <hr style="flex: 1" />
+              <span>OR</span>
+              <hr style="flex: 1" />
+            </div>
+
+            <!-- Social Login -->
+            <button type="button" class="btn btn-outline" style="width: 100%">
+              <i class="fab fa-google"></i> Continue with Google
+            </button>
+
+            <p style="text-align: center; margin-top: 1rem; color: var(--gray)">
+              New here?
+              <a href="signup.html" style="color: var(--primary)">
+                Create account
+              </a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>ScholarFlow</h3>
+            <p>Your gateway to verified scholarships worldwide.</p>
+            <div class="social-links">
+              <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="index.html#scholarships">Scholarships</a>
+              </li>
+              <li><a href="index.html#upcoming">Upcoming</a></li>
+              <li><a href="blog.html">Blog</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Contact</h3>
+            <ul class="footer-links">
+              <li><i class="fas fa-envelope"></i> info@scholarflow.com</li>
+              <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>
+            &copy; 2024 ScholarFlow. All rights reserved. |
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="app.js"></script>
+
+    <script>
+      function togglePassword() {
+        const pwd = document.getElementById("loginPassword");
+        pwd.type = pwd.type === "password" ? "text" : "password";
+      }
+    </script>
+  </body>
+</html>
